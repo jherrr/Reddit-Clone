@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RDClone</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<h1>
+  <% if logged_in? %>
+  <%= current_user.email %>
+  <%= button_to "log_out", session_url, method: :delete %>
+  <% end %>
+</h1>
+
+<body>
+
+<%= yield %>
+
+</body>
+</html>

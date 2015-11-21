@@ -1,0 +1,35 @@
+
+<% @user.attributes.each do |_, attribute| %>
+  <%= attribute %>
+<% end %>
+
+
+
+<label>
+  Subs
+<% @user.subs.each do |sub|%>
+  <label>
+  <%= link_to sub.title, sub_url(sub) %>
+  </label>
+  <br>
+  <label>
+  <%= sub.description %>
+  </label>
+ <br>
+<% end %>
+</label>
+
+<br>
+<label>
+  Posts
+<% @user.posts.each do |post|%>
+  <label>
+  <%= link_to post.title, post_url(post) %>
+  </label>
+  <br>
+  <label>
+  <%= post.content %>
+  </label>
+  <br>
+<% end %>
+</label>
